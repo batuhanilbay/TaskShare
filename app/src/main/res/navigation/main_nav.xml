@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.taskshare.fragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/goEmployeeRegister"
+            app:destination="@id/employeeRegistrationFragment" />
+        <action
+            android:id="@+id/goTaskRegister"
+            app:destination="@id/taskRegistrationFragment" />
+        <action
+            android:id="@+id/goDashBoard"
+            app:destination="@id/dashBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeeRegistrationFragment"
+        android:name="com.example.taskshare.fragment.EmployeeRegistrationFragment"
+        android:label="EmployeeRegistration"
+        tools:layout="@layout/fragment_employee_registration">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/taskRegistrationFragment"
+        android:name="com.example.taskshare.fragment.TaskRegistrationFragment"
+        android:label="TaskRegistration"
+        tools:layout="@layout/fragment_task_registration"/>
+    <fragment
+        android:id="@+id/employeeDetailFragment"
+        android:name="com.example.taskshare.fragment.EmployeeDetailFragment"
+        android:label="EmployeeDetailFragment"
+        tools:layout="@layout/fragment_employee_detail" >
+        <argument
+            android:name="employeeDetailObject"
+            app:argType="com.example.taskshare.entity.Employee"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="com.example.taskshare.fragment.TaskDetailFragment"
+        android:label="TaskDetailFragment"
+        tools:layout="@layout/fragment_task_detail"/>
+    <fragment
+        android:id="@+id/dashBoardFragment"
+        android:name="com.example.taskshare.fragment.DashBoardFragment"
+        android:label="DashBoardFragment"
+        tools:layout="@layout/fragment_dash_board"/>
+</navigation>

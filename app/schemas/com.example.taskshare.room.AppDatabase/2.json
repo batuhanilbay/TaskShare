@@ -1,0 +1,84 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "acc42e5b92cbd947007fba824329778e",
+    "entities": [
+      {
+        "tableName": "employees",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`employee_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `employee_name` TEXT NOT NULL, `employee_surname` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "employee_id",
+            "columnName": "employee_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "employee_name",
+            "columnName": "employee_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "employee_surname",
+            "columnName": "employee_surname",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "employee_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "tasks",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`task_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `task_name` TEXT NOT NULL, `task_level` TEXT NOT NULL, `task_employee_name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "task_id",
+            "columnName": "task_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "task_name",
+            "columnName": "task_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "task_level",
+            "columnName": "task_level",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "task_employee_name",
+            "columnName": "task_employee_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "task_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'acc42e5b92cbd947007fba824329778e')"
+    ]
+  }
+}

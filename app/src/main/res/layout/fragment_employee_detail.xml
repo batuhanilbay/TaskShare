@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <variable
+            name="employeeDetailFragment"
+            type="com.example.taskshare.fragment.EmployeeDetailFragment" />
+        <variable
+            name="employeeDetailToolbarTitle"
+            type="String" />
+        <variable
+            name="employeeEntity"
+            type="com.example.taskshare.entity.Employee" />
+        <variable
+            name="employeeAdapter"
+            type="com.example.taskshare.adapter.EmployeeAdapter" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.EmployeeDetailFragment">
+
+
+        <TextView
+            android:id="@+id/tVSurname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="8dp"
+            android:text="Surname"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarEmployeeDetail" />
+
+        <TextView
+            android:id="@+id/tVName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="8dp"
+            android:text="Name"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarEmployeeDetail" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarEmployeeDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/toolbarColor"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{employeeDetailToolbarTitle}" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvEmployeeDetail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="1dp"
+            android:adapter="@{employeeAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tVSurname" />
+
+        <TextView
+            android:id="@+id/tVID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:text="ID"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarEmployeeDetail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

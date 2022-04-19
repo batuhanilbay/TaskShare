@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:enabled="true"
+        android:icon="@drawable/home_item"
+        android:title="Home" />
+    <item
+        android:id="@+id/employeeDetailFragment"
+        android:icon="@drawable/user_item"
+        android:title="User"
+        app:showAsAction="always"
+
+       />
+    <item
+        android:id="@+id/taskDetailFragment"
+        android:icon="@drawable/task_item"
+        android:title="Task"
+        app:showAsAction="always"
+         />
+
+</menu>

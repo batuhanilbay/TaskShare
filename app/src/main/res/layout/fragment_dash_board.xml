@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="dashBoardToolbarTitle"
+            type="String" />
+        <variable
+            name="taskShareAdapter"
+            type="com.example.taskshare.adapter.TaskShareAdapter" />
+        <variable
+            name="dashBoardFragment"
+            type="com.example.taskshare.fragment.DashBoardFragment" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.DashBoardFragment">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarDashboard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/toolbarColor"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{dashBoardToolbarTitle}" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDashboard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="1dp"
+            android:adapter="@{taskShareAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tVMatchEmpId" />
+
+        <Button
+            android:id="@+id/buttonGenerate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/buttonColor"
+            android:text="Match"
+            app:layout_constraintBottom_toBottomOf="@+id/rvDashboard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tVDayN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:text="DAY"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarDashboard" />
+
+        <TextView
+            android:id="@+id/tVMatchEmpId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="8dp"
+            android:text="Employee Id"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/tVDayN"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarDashboard" />
+
+        <TextView
+            android:id="@+id/textViewMatchTaskId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="220dp"
+            android:layout_marginTop="8dp"
+            android:text="Task Id"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarDashboard" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
